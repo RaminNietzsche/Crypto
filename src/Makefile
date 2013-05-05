@@ -200,7 +200,8 @@ bin_SCRIPTS = python_cryphto.py \
 	ceasar.py \
 	monoalphabetic.py \
 	playfair.py \
-	polyalphabetic.py
+	polyalphabetic.py \
+	des.py
 
 python_cryphtodir = $(pythondir)/python_cryphto
 python_cryphto_PYTHON = \

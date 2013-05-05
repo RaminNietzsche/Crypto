@@ -25,11 +25,26 @@ class DES(object):
 	R = []
 	
 	def Encrypt(self, str):
-		print str
+		self.MakeRL(self.MakeBin(str))
 		print self.MakeBin(str)
-
+		
 	def Decrypt(self, str):
 		pass
+
+	def MakeRL(self, list):
+		while len(list) > 0:
+			# Left 32 bit of each block ;)
+			self.L.append(List2Str(list[:4]))
+			list.pop(3)
+			list.pop(2)
+			list.pop(1)
+			list.pop(0)
+			# Right of them :D
+			self.R.append(List2Str(list[:4]))
+			list.pop(3)
+			list.pop(2)
+			list.pop(1)
+			list.pop(0)
 		
 	def MakeBin(self, str):
 		tmp = []
