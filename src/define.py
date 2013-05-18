@@ -5,7 +5,7 @@
 #                                 define.py					#
 #                                                                               #
 #  Copyright  04-05-2013  <Ramin.Najarbashi@Gmail.com>				#
-#  Last Modified : Sun 05 May 2013 11:15:51 PM IRDT BY: <Ramin.Najarbashi@Gmail.com>	#
+#  Last Modified : Sat 18 May 2013 06:09:29 PM IRDT BY: <Ramin.Najarbashi@Gmail.com>	#
 #                                                                               #
 #  This program is free software; you can redistribute it and/or modify         #
 #  it under the terms of the GNU General Public License as published by         #
@@ -25,7 +25,7 @@
 #--------------------------------------------------------------------------------
  
 # if ceasar_space = 2 : A --> C
-ceasar_space = 2
+ceasar_space = 8
 
 # A = monoalphabetic_key[0] ... Z = monoalphabetic_key[25]
 monoalphabetic_key = "AQWSDERFGTYHJUIKLOPMNBVCXZ"
@@ -49,3 +49,14 @@ polyalphabetic_key="run"
 # DES key
 #DES_key = [0x13 ,0x34 ,0x57 ,0x79 ,0x9B ,0xBC ,0xDF ,0xF1]
 DES_key = "KeyValue"
+
+# 
+vigenere_key = "vigenere"
+vigenere_table = "abcdefghijklmnopqrstuvwxyz"
+
+# RailFence Line count divs :D
+railfence_lines = 3 
+
+# count of RowTranspose Col
+row_transpose_col = 7
+row_transpose_key = "4312567"

@@ -20,13 +20,25 @@ import define
 
 class DES(object):
 
-	PC_KEY = ""
+	# First PC key (PC-1)
+	PC_KEY = "" #  "11110000110011001010101011110101010101100110011110001111" TEST OK :D
+
+	# First 32bits from Block [XXXX----]
 	L = []
+
+	# Second 32bit from Block [----XXXX]
 	R = []
+
+	# C0 - C16 (C0 = first 28 bit of PC_1 :D and C1-C16 Rotatet shift C0)
+	C = []
+
+	# D0 - D16 (D0 = second 28 bit of PC_1 :D and D1-D16 Rotatet shift D0)
+	D = []
 	
 	def Encrypt(self, str):
 		self.MakeRL(self.MakeBin(str))
 		print self.MakeBin(str)
+		self.MakeCD()
 		
 	def Decrypt(self, str):
 		pass
@@ -45,6 +57,47 @@ class DES(object):
 			list.pop(2)
 			list.pop(1)
 			list.pop(0)
+
+	def MakeCD(self):
+		self.C.append(self.PC_KEY[:28])
+		self.D.append(self.PC_KEY[28:])
+		
+		self.C.append(rotate(self.C[0], 1))
+		self.C.append(rotate(self.C[1], 1))
+		self.C.append(rotate(self.C[2], 2))
+		self.C.append(rotate(self.C[3], 2))
+		self.C.append(rotate(self.C[4], 2))
+		self.C.append(rotate(self.C[5], 2))
+		self.C.append(rotate(self.C[6], 2))
+		self.C.append(rotate(self.C[7], 2))
+		self.C.append(rotate(self.C[8], 1))
+		self.C.append(rotate(self.C[9], 2))
+		self.C.append(rotate(self.C[10], 2))
+		self.C.append(rotate(self.C[11], 2))
+		self.C.append(rotate(self.C[12], 2))
+		self.C.append(rotate(self.C[13], 2))
+		self.C.append(rotate(self.C[14], 2))
+		self.C.append(rotate(self.C[15], 1))
+
+		self.D.append(rotate(self.D[0], 1))
+		self.D.append(rotate(self.D[1], 1))
+		self.D.append(rotate(self.D[2], 2))
+		self.D.append(rotate(self.D[3], 2))
+		self.D.append(rotate(self.D[4], 2))
+		self.D.append(rotate(self.D[5], 2))
+		self.D.append(rotate(self.D[6], 2))
+		self.D.append(rotate(self.D[7], 2))
+		self.D.append(rotate(self.D[8], 1))
+		self.D.append(rotate(self.D[9], 2))
+		self.D.append(rotate(self.D[10], 2))
+		self.D.append(rotate(self.D[11], 2))
+		self.D.append(rotate(self.D[12], 2))
+		self.D.append(rotate(self.D[13], 2))
+		self.D.append(rotate(self.D[14], 2))
+		self.D.append(rotate(self.D[15], 1))
+		
+		print self.C
+		print self.D
 		
 	def MakeBin(self, str):
 		tmp = []
@@ -90,8 +143,12 @@ def List2Str(list):
 		result += item
 	return result
 
+def rotate(l,n):
+    return l[n:] + l[:n]
+
+	
 ram = DES()
-ram.PC_1()
+#ram.PC_1()
 a = ram.Encrypt("Test No:1one :D ?dflkeroptn4 m4ko4 نتانت")
 print (a)
 print ram.Decrypt(a)
