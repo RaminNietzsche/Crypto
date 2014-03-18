@@ -22,6 +22,16 @@ import playfair
 import polyalphabetic
 
 def main(argv):
+	if len(argv) < 2:
+		print "Pleas read Help!!!( -h ) "
+		exit(0)
+	if argv[1] == '-h' or argv[1] == '--help':
+		print "python_cryphto.py --type --decrypt|--encrypt"
+		print '''type:\t
+				ceasar\t
+				monoalphabetic\t
+				playfair\t
+				polyalphabetic\t'''
 	if argv[1] == '--ceasar':
 		Alg = ceasar.Ceasar()
 		try:

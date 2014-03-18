@@ -16,10 +16,9 @@
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import define
-#define.ceasar_space ---> define.py!
 
 class Ceasar(object):
-	def Encrypt(self, str):
+	def Decrypt(self, str):
 		#Get str as string
 		tmp = ''
 		for item in str:
@@ -43,14 +42,14 @@ class Ceasar(object):
 				tmp += item
 		return tmp
 
-	def Decrypt(self, str):
+	def Encrypt(self, str):
 		tmp = ''
 		for item in str:
 			#Get Alpabet
 			if ord(item.lower()) >= ord('a') and ord(item.lower()) <= ord('z'):
 				#For lowerCase
 				if ord(item) >= 97:
-					print (ord(item) - define.ceasar_space)  
+					#print (ord(item) - define.ceasar_space)  
 					if ((ord(item) - define.ceasar_space - 1) ) < ord('a'):
 						tmp += chr((ord(item) - define.ceasar_space) + ord('z') % ord('a'))
 					else:
@@ -68,7 +67,9 @@ class Ceasar(object):
 		return tmp
 
 
-#ram = Ceasar()
-#a = ram.Encrypt("Test No:1one :D")
-#print (a)
-#print ram.Decrypt(a)
+# ram = Ceasar()
+# #a = ram.Encrypt("Test No:1one :D")
+# a = "g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. bmgle gr gl zw fylb gq glcddgagclr ylb rfyr'q ufw rfgq rcvr gq qm jmle. sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj."
+
+# #print (a)
+# print ram.Dncrypt(a)

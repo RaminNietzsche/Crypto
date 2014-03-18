@@ -30,9 +30,9 @@ class Vigenere(object):
 		while count < len(str):
 			#print ((ord(define.vigenere_key[count % len(define.polyalphabetic_key)]) + (ord(str[count].lower()))) % ord('a') % 26 )
 			index  = (ord(define.vigenere_key[count % len(define.polyalphabetic_key)]) + (ord(str[count].lower()))) % ord('a') % 26
-			#if index == 0:
-			#	index += 26
-			print index
+			if index == 0:
+				index += 26
+			#print index
 			tmp += define.vigenere_table[index]
 			count += 1
 		return tmp
@@ -54,6 +54,6 @@ class Vigenere(object):
 
 ram = Vigenere()
 #ram.PC_1()
-a = ram.Encrypt("thisisatestz")
+a = ram.Encrypt("tes")
 print (a)
 print ram.Decrypt(a)

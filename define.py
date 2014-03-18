@@ -5,7 +5,7 @@
 #                                 define.py					#
 #                                                                               #
 #  Copyright  04-05-2013  <Ramin.Najarbashi@Gmail.com>				#
-#  Last Modified : Sat 18 May 2013 06:09:29 PM IRDT BY: <Ramin.Najarbashi@Gmail.com>	#
+#  Last Modified : Fri 24 May 2013 08:04:21 PM IRDT BY: <Ramin.Najarbashi@Gmail.com>	#
 #                                                                               #
 #  This program is free software; you can redistribute it and/or modify         #
 #  it under the terms of the GNU General Public License as published by         #
@@ -25,7 +25,7 @@
 #--------------------------------------------------------------------------------
  
 # if ceasar_space = 2 : A --> C
-ceasar_space = 8
+ceasar_space = 2
 
 # A = monoalphabetic_key[0] ... Z = monoalphabetic_key[25]
 monoalphabetic_key = "AQWSDERFGTYHJUIKLOPMNBVCXZ"
